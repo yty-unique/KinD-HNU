@@ -158,23 +158,23 @@ print('[*] Number of training data: %d' % len(train_restoration_high_r_data))
 learning_rate = 0.0001
 def lr_schedule(epoch):
     initial_lr = learning_rate
-    # if epoch<=800:
-    #     lr = initial_lr
-    # elif epoch<=1250:
-    #     lr = initial_lr/2
-    # elif epoch<=1500:
-    #     lr = initial_lr/4
-    # else:
-    lr = initial_lr/100
+    if epoch<=800:
+        lr = initial_lr
+    elif epoch<=1250:
+        lr = initial_lr/2
+    elif epoch<=1500:
+        lr = initial_lr/4
+    else:
+        lr = initial_lr/100
     return lr
 
-epoch = 100
+epoch = 2000
 
 sample_dir = './Restoration_net_train/'
 if not os.path.isdir(sample_dir):
     os.makedirs(sample_dir)
 
-eval_every_epoch = 5
+eval_every_epoch = 10
 train_phase = 'Restoration'
 numBatch = len(train_restoration_low_r_data) // int(batch_size)
 train_op = train_op_restoration

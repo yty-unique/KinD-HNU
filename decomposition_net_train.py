@@ -109,14 +109,14 @@ for idx in range(len(eval_low_data_name)):
     eval_high_data.append(eval_high_im)
 
 
-epoch = 500
-learning_rate = 0.00001
+epoch = 1000
+learning_rate = 0.0001
 
 sample_dir = './Decom_net_train/'
 if not os.path.isdir(sample_dir):
     os.makedirs(sample_dir)
 
-eval_every_epoch = 5
+eval_every_epoch = 10
 train_phase = 'decomposition'
 numBatch = len(train_low_data) // int(batch_size)
 train_op = train_op_Decom

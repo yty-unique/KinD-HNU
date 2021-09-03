@@ -111,9 +111,9 @@ train_adjust_high_i_data = decomposed_high_i_data_480[0:450]
 
 print('[*] Number of training data: %d' % len(train_adjust_high_i_data))
 
-learning_rate = 0.00001
-epoch = 500
-eval_every_epoch = 5
+learning_rate = 0.0001
+epoch = 1000
+eval_every_epoch = 10
 train_phase = 'adjustment'
 numBatch = len(train_adjust_low_i_data) // int(batch_size)
 train_op = train_op_adjust
